@@ -46,7 +46,7 @@ SECRET_KEY = 'uly2*nh%7^84ifzf$)!%e)_$59t@_=_%br30naay@a5s^ybulo'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '*', ]
+    '*', '.pythonanywhere.com']
 
 
 # Application definition
@@ -147,7 +147,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR),'login/static/login')
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR),'static')
 
 STATICFILES_DIRS =(
         os.path.join(BASE_DIR,'login/static/login'),
