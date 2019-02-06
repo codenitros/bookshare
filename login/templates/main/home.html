@@ -1,0 +1,174 @@
+
+{% extends 'base.html' %}
+
+  {% block head %}
+  <!-----------------------------------------------------------------------------------------------------------------------------#-->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" 
+  integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+   <!-- {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'login/base.css' %}">-->
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+  <style >
+
+      html{
+        scroll-behavior: smooth;
+      }
+/* sell and buy button */
+      .button {
+        border-radius: 4px;
+        background-color: #f4511e;
+        border: none;
+        color: #FFFFFF;
+        text-align: center;
+        font-size: 22px;
+        padding: 12px;
+        width: 180px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+      }
+
+      .button:hover{
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+
+      }
+
+      .button span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+      }
+
+      .button span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+      }
+
+      .button:hover span {
+        padding-right: 25px;
+      }
+
+      .button:hover span:after {
+        opacity: 1;
+        right: 0;
+
+      }
+
+
+      #myBtn {
+        display: none; /* Hidden by default */
+        position: fixed; /* Fixed/sticky position*/
+        bottom: 100px;/*Place the button at the bottom of the page */
+        right: 30px;/*Place the button 30px from the right*/
+        z-index: 0;  /*Make sure it does not overlap */
+        border: none;  /*Remove borders */
+        outline: none; /* Remove outline */
+        opacity: 0.6;
+        cursor:pointer; /* Add a mouse pointer on hover */
+        padding: 15px;  /*Some padding */
+        font-size: 32px; /*ncrease font size */
+      }
+      
+      #mybtn:hover{
+        background-color: inherit;
+      }
+</style>
+
+
+
+    {% load static %}
+    <script>
+      // When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function() {scrollFunction()};
+
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          document.getElementById("myBtn").style.display = "block";
+        } else {
+          document.getElementById("myBtn").style.display = "none";
+        }
+    }
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+    </script>
+
+{% endblock %}
+
+
+<!-----------------------------------------------------------------------------------------------------------------------------#-->
+{% block body %}
+
+
+<br><br>
+
+<div class="container" id="cont-ainer">
+  <br>
+  <div class="success">
+  	<h4>HELLO {{ request.user.username }} ! </h4>
+  	<p>You have  successfully  logged in</p>
+  </div>
+
+<!--#----------------------------------------------------------------------------------------------------------#-->
+<!--  	<div class="form-popup" id="myForm">
+      <form action="{% url 'home' %}" class="form-container">
+         <h1>Sell</h1>
+         {% csrf_token %}
+         {{ form.as_p }}
+        <button type="submit" class="btn">sell</button>
+        <button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
+      </form>
+    </div>
+-->       
+
+    <li class = "fas fa-angle-double-up"  onclick="topFunction()" id="myBtn" title="Go to top"></li>
+
+  	<p align="center" ><a href="{% url 'selling'%}"><button class="button"><span>Sell</span></button></a> <a href="{% url 'buy'%}"><button id="buy-btn" class="button"><span>Buy</span></button></a></p>
+<!--#----------------------------------------------------------------------------------------------------------#-->
+
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h2 class="display-4">Easy Share Your Books</h2>
+        <p class="lead">A complete new and easy way to share your books with just a few clicks. </p>
+      </div>
+    </div>
+  <br>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h2 class="display-4">Best Deal</h2>
+        <p class="lead">Find your best deal for your books and never wait to share good books with your friends. </p>
+      </div>
+    </div>
+  <br>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h2 class="display-4">Get Notified</h2>
+        <p class="lead">Get to know who is interested in your books and find a potential buyer. </p>
+      </div>
+    </div>
+  <br>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h2 class="display-4">Get Placed</h2>
+        <p class="lead">Get to know the in and out of interviews that happen at UVCE by an informative blog that can take your interview preparation to a next level. </p>
+      </div>
+    </div>
+      
+  </div>
+</div>
+
+
+
+{% endblock %}

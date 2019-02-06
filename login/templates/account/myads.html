@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+
+
+{% block body %}
+
+
+        {% if messages %}
+            {% for message in messages %}
+                <div {% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %} role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close" ><span aria-hidden="true"></span></button>
+                    <strong>{{ message }}</strong>
+                </div>
+            {% endfor %}
+
+        {% endif %}
+    <div class="container">
+        <h1 align="center">My Ads</h1><br>
+        <div style="overflow-x:auto">
+                <table class="table table-bordered">
+                {% if not ad_list %}
+                     <h4 align="center">No Ads to show</h4>
+
+                {% else %}
+
+                            <tr><th>User</th><th>Book Name</th><th>Prize</th><th>Description</th><th>Negotiable</th><th>Update</th><th>Delete</th></tr>
+                            {% for ad in ad_list %}
+                                <tr>
+                                    <td>{{ ad.user }}</td>
+                                    <td>{{ ad.book_name }}</td>
+                                    <td>Rs - {{ ad.price }}</td>
+                                    <td>{{ ad.description }}</td>
+                                    <td>{{ ad.negotiable }}</td>
+                                    <td><a href={% url 'update' pk=ad.pk %}><button class="btn btn-primary"> Update</button></a></td>
+                                    <td><a href={% url 'delete' pk=ad.pk %}><button class="btn btn-danger"> Delete</button></a></td>
+                                </tr>
+                            {% endfor %}
+
+                 {% endif %}
+                </table>
+        </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+
+<!--{% load static %}-->
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!--<link rel="stylesheet" type="text/css" href="css/index.css">-->
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity=" sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src={% static "js/scrollFunction.js" %} type="text/javascript"></script>
+
+  <style>
+    /*--------------------footer---------------*/
+
+
+      footer{
+        width: 100%;
+        background-color: #222;
+        padding:30px 0px;
+      }
+
+      footer nav{
+          position: center;
+      }
+
+      footer nav ul{
+          text-align: center;
+          margin: 0px;
+          padding: 0px;
+      }
+
+      footer nav ul li{
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+      }
+
+      footer nav ul li a{
+        font-family: Arial;
+        font-weight: 400;
+        font-size: 32px;
+        color: #fff;
+      }
+      footer nav ul li a i:hover{
+        color:#F3CB0A;
+      }
+
+      footer p {
+        color: #fff;
+        text-align: center;
+        font-family: 
+      }
+
+    </style>
+
+</head>
+<body>
+  <div id="wrapper">
+
+        {% if messages %}
+              {% for message in messages %}
+                  <div {% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %} role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close" ><span aria-hidden="true"></span></button>
+                    <strong>{{ message }}</strong>
+                  </div>
+              {% endfor %}
+        {% endif %}
+
+        <div id="header">
+          <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+            <a class="navbar-brand" href="#">UVCE Book-Share <i class="fas fa-book-open" id="bookLogo"></i></a>
+                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                 </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                      <ul class="navbar-nav ml-auto">
+                          <li class="nav-item active"><a class="nav-link active" href="/login">Login</a></li>
+                          <li class="nav-item active"><a class="btn btn-outline-primary" href="/register">SignUp</a></li>
+                      </ul>
+                </div>
+          </nav>
+        </div>
+     
+  <div id="content">
+    <div class="container">
+    <h1>WELCOME To UVCE Book-Share </h1>
+    <br><br><br><br>
+
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h2 class="display-4">Easy Share Your Books</h2>
+          <p class="lead">A complete new and easy way to share your books with just a few clicks. </p>
+        </div>
+      </div>
+    <br>
+    <br>
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h2 class="display-4">Best Deal</h2>
+          <p class="lead">Find your best deal for your books and never wait to share good books with your friends. </p>
+        </div>
+      </div>
+    <br>
+    <br>
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h2 class="display-4">Get Notified</h2>
+          <p class="lead">Get to know who is interested in your books and find a potential buyer. </p>
+        </div>
+      </div>
+
+      <br>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h2 class="display-4">Get Placed</h2>
+        <p class="lead">Get to know the in and out of interviews that happen at UVCE by an informative blog that can take your interview preparation to a next level. </p>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrapper">
+    <nav>
+      <ul>
+          <li><a href="/www.facebook.com"><i class="fab fa-facebook"></i></a></li>
+          <li><a href="/www.instagram.com"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="/www.twitter.com"><i class="fab fa-twitter"></i></a></li>
+      </ul>
+    </nav>
+    <p class="rights"><i class="far fa-copyright"></i> All Rights Received </p>
+  </div>
+</footer>
+
+</body>
+
+
+
+</html>

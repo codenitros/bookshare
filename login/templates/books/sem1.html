@@ -1,0 +1,30 @@
+{%  extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+
+{% block body %}
+
+<div class="container"> 
+    <form method="post">{% csrf_token %}
+        <select name="dropdown">
+          <option value="m1">Mathematics -1</option>
+          <option value="Mechanics">Engineering Mechanics</option>
+          <option value="Phy">Physics</option>
+          <option value="MES">Mechanical Engineering Science</option>
+          <option value="ada">Algorithms</option>
+          <option value="dms">DMS</option>
+          <option value="all">All Books</option>
+        </select>
+        <button formaction="{% url 'selling' %}"  formmethod="GET" value="sell">sell</button>
+        <button formaction="{% url 'buy' %}" type="submit" value="lookout">buy</button>
+
+    </form>
+
+
+</div>
+
+{% endblock %}
+

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+    <style>
+        body{
+
+            padding-top: 60px;
+        }
+
+    </style>
+{% endblock %}
+{% block body %}
+<div class="container">
+    {% with url_name=request.resolver_match.url_name %}
+        {%  if url_name == 'selling' %}
+	        <h1>sell</h1>
+        {% elif url_name == 'update' %}
+            <h1>Update</h1>
+        {% else %}
+            <h1>Delete Ad</h1>
+        {%  endif %}
+    {% endwith %}
+	<hr>
+
+
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            {% with url_name=request.resolver_match.url_name %}
+                {%  if url_name == 'selling' %}
+                    <button class="btn btn-primary" value="submit">post</button>
+                {% elif url_name == 'update'%}
+                    <button class="btn btn-primary">Update</button>
+                {% else %}
+                    <button class="btn btn-danger">Delete</button>
+                {%  endif %}
+            {% endwith %}
+
+        </form>
+
+
+
+</div>
+{% endblock  %}

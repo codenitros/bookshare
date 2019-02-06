@@ -1,0 +1,288 @@
+
+{% extends 'base.html'%}
+
+{% block head %}
+        <title>Interview Experience </title>        
+        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <!-- {% load static %}
+        <link rel="stylesheet" href="{% static 'experience/blog.css' %}">-->
+        <style>
+
+                html{
+                    scroll-behavior: smooth;
+                }
+
+                body{
+                    padding: 0px 0px 0px 0px;
+                    background-color: #efefef;
+                }
+
+                .pageheader {
+                    background-color: #C25100;
+                    margin-top: 50px;
+                    margin-left: 0px;
+                    padding: 20px 20px 20px 40px
+                }
+
+                .pageheader h1, .pageheader h1 a, .pageheader h1 a:visited, .pageheader h1 a:active {
+                    color: #ffffff;
+                    font-size: 36pt;
+                    text-decoration: none;
+                    text-align: center;
+                }
+
+                .submit-article p{
+                    text-align: center;
+                    margin-top: 30px;
+                    color: black;
+                    text-decoration: underline none;
+                    font-size: 22px;
+                    font-family: 'Lat', sans-serif;
+                }
+
+                .modal {
+                  display: none; /* Hidden by default */
+                  position: fixed; /* Stay in place */
+                  z-index: 1; /* Sit on top */
+                  left: 0;
+                  top: 0;
+                  width: 100%; /* Full width */
+                  height: 100%; /* Full height */
+                  overflow: auto; /* Enable scroll if needed */
+                  background-color: rgb(0,0,0); /* Fallback color */
+                  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+                }
+
+                /* Modal Content/Box */
+                .modal-content {
+                  background-color: #fefefe;
+                  margin: 15% auto; /* 15% from the top and centered */
+                  padding: 20px;
+                  border: 1px solid #888;
+                  width: 80%; /* Could be more or less, depending on screen size */
+                }
+
+                /* The Close Button */
+                .close {
+                  color: #aaa;
+                  float: right;
+                  font-size: 28px;
+                  font-weight: bold;
+                }
+
+                .close:hover,
+                .close:focus {
+                  color: black;
+                  text-decoration: none;
+                  cursor: pointer;
+                }
+
+                .content {
+                    padding-top: 60px;
+
+                }
+
+                h1, h2, h3, h4 {
+                    font-family: 'Lobster', cursive;
+                }
+
+                h5{
+                    font-family: 'Lat', sans-serif;
+                }
+
+                .date {
+                    color: #828282;
+                }
+
+                .post {
+                    margin-bottom: 70px;
+                    padding: 10px;
+                    box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.2);
+                    background-color:#fff;
+                }
+                .post:hover{
+                    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+        
+                }
+
+                .blog-meta {
+                    font-size: 14px;
+                    margin-bottom: 2px;
+                }
+
+                .post span{
+                    float: right;
+                    font-size: 12px;
+                    color: cornflowerblue;
+                }
+
+                .post-text{
+                    font-size: 14px;
+                    text-align: justify;
+                }
+
+                .post h2{
+                    margin-top: 10px;
+                    font-size: 25px;
+                    color: #007bff;
+                }
+
+                .post h2 a{
+                    text-decoration: none;
+                }
+                .post h2 a:hover{
+                    text-decoration: none;
+                }
+
+                .read-more{
+                    background-image: linear-gradient(to right,#1c03b5,#5c8bef);
+                    padding: 5px 12px 8px ;
+                    border-radius: 20px;
+                    line-height: 20px;
+                    font-size: 14px;
+                    color: #fff;
+                    border: none;
+                }
+
+                .read-more:hover{
+                    background-image: linear-gradient(to right,#006417,#00b128);
+                    text-decoration: none;
+                    color: #fff;
+                    
+                }
+
+                #myBtn {
+                    display: none; /* Hidden by default */
+                    position: fixed; /* Fixed/sticky position*/
+                    bottom: 100px;/*Place the button at the bottom of the page */
+                    right: 30px;/*Place the button 30px from the right*/
+                    z-index: 99;  /*Make sure it does not overlap */
+                    border: none;  /*Remove borders */
+                    outline: none; /* Remove outline */
+                    cursor:pointer; /* Add a mouse pointer on hover */
+                    padding: 15px;  /*Some padding */
+                    font-size: 32px; /*ncrease font size */
+              }
+              
+              #mybtn:hover{
+                    background-color: inherit;
+              }
+
+        </style>
+        {% load static %}
+        <script>
+
+            // When the user scrolls down 20px from the top of the document, show the button
+            window.onscroll = function() {scrollFunction()};
+
+            function scrollFunction() {
+              if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("myBtn").style.display = "block";
+              } else {
+                document.getElementById("myBtn").style.display = "none";
+              }
+            }
+
+            // When the user clicks on the button, scroll to the top of the document
+            function topFunction() {
+              document.body.scrollTop = 0; // For Safari
+              document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+            }
+
+                // Get the modal
+        function myFunc(){
+            var modal = document.getElementById('myModal');
+
+            // Get the button that opens the modal
+            var btn = document.getElementById("myClick");
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+
+            // When the user clicks on the button, open the modal 
+            btn.onclick = function() {
+              modal.style.display = "block";
+            }
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() {
+              modal.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+              if (event.target == modal) {
+                modal.style.display = "none";
+              }
+        }
+        }
+
+
+        </script>
+{% endblock %}
+
+{% block body %}
+        <div class="pageheader">
+            <h1>Interview Blog</h1>
+        </div>
+
+        <div class="submit-article">
+            <p id="myClick" onclick="myFunc()">How can i publish my stuff here ?</p>
+
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+
+          <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>--> Type and Edit your </p>
+          </div>
+        </div>
+        </div>
+
+        <div class="content container">
+            <div class="row">
+                    {% for post in posts %}
+                    <div class="col-md-4">
+                        <div class="post">
+                            <p class="blog-meta">By: {{ post.author }}<span>published: {{ post.published_date }}</span></p>
+                            <h2 class="title"><a href=""><i class="fas fa-long-arrow-alt-right"></i>  {{ post.title }}</a></h2>
+                            <h5><p class="post-text">{{ post.text|linebreaksbr }}</p></h5>
+                            <p><a href=""  class="read-more">read more</a> </p>
+                            <span><i class="fas fa-thumbs-up">  7 people liked</i></span>
+                            <br>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    {% for post in posts %}
+                    <div class="col-md-4">
+                        <div class="post">
+                            <p class="blog-meta">By: {{ post.author }}<span>published: {{ post.published_date }}</span></p>
+                            <h2 class="title"><a href=""><i class="fas fa-long-arrow-alt-right"></i>  {{ post.title }}</a></h2>
+                            <h5><p class="post-text">{{ post.text|linebreaksbr }}</p></h5>
+                            <p><a href=""  class="read-more">read more</a> </p>
+                            <span><i class="fas fa-thumbs-up">  7 people liked</i></span>
+                            <br>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    {% for post in posts %}
+                    <div class="col-md-4">
+                        <div class="post">
+                            <p class="blog-meta">By: {{ post.author }}<span>published: {{ post.published_date }}</span></p>
+                            <h2 class="title"><a href=""><i class="fas fa-long-arrow-alt-right"></i>  {{ post.title }}</a></h2>
+                            <h5><p class="post-text">{{ post.text|linebreaksbr }}</p></h5>
+                            <p><a href=""  class="read-more">read more</a> </p>
+                            <span><i class="fas fa-thumbs-up">  7 people liked</i></span>
+                            <br>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    
+                
+            </div>
+        </div>
+        <li class= "fas fa-angle-double-up"  onclick="topFunction()" id="myBtn" title="Go to top"></li>
+
+{% endblock %}

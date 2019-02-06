@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>Profile</title>
+{% endblock %}
+
+{% block body %}
+    {% if messages %}
+            {% for message in messages %}
+                <div {% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %} role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close" ><span aria-hidden="true"></span></button>
+                    <strong>{{ message }}</strong>
+                </div>
+            {% endfor %}
+
+    {% endif %}
+<div class="container">
+    <h1>Profile</h1>
+    <p>Usename:   {{ user.username }}</p>
+    <p>Firstname: {{ user.first_name }}</p>
+    <p>Lastname:  {{ user.last_name }}</p>
+    <p>Email:	   {{user.email }}</p>
+    <p>USN:       {{ user.userprofile.USN }}</p>
+    <p>year:      {{ user.userprofile.year }}</p>
+    <p>sem:       {{ user.userprofile.sem }}</p>
+    <p>phone:     {{ user.userprofile.phone }}</p>
+    <!--<img src="{{ user.profile.photo.url}}" width="240">-->
+    <form>
+        <button class="btn btn-danger"  onclick="{% url 'delete_acc' %}">Delete account and Related Data</button>
+    </form>
+</div>
+{% endblock %}
+
+
+
+

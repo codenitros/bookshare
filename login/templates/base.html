@@ -1,0 +1,143 @@
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <!--{% load static %}
+ <link type="text/css" rel="stylesheet" href="{% static 'login/base.css' %}">  -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <style>
+
+      html {
+        position: relative;
+        min-height: 100%;
+      }
+
+      body {
+        margin: 0 0 100px;
+        padding: 25px;
+      }
+      body nav a i{
+          color: #fff;
+      }
+
+      #leaveSpace{
+        height: 20px;
+        padding-bottom: 80px;
+      }
+
+      footer{
+        width: 100%;
+        background-color: #5A5A5A;
+        padding-top: 20px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 100px;
+        overflow: hidden;
+
+      }
+
+      footer nav{
+          position: center;
+      }
+
+      footer nav ul{
+          text-align: center;
+          margin: 0px;
+          padding: 0px;
+      }
+
+      footer nav ul li{
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+      }
+
+      footer nav ul li a{
+        font-family: Arial;
+        font-weight: 400;
+        font-size: 32px;
+        color: #fff;
+      }
+      footer nav ul li a i:hover{
+        color:#F3CB0A;
+      }
+
+      footer p {
+        color: #fff;
+        text-align: center;
+        font-family: arial;
+      }
+
+  </style>
+
+  {% block head %}
+  {% endblock %}
+</head>
+
+
+
+
+<body>
+  <div id=main>
+    <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark mb-4">
+      <a class="navbar-brand" href="{%url 'home'%}">UVCE Book-Share <i class="fas fa-book-open" id="bookLogo"></i></a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="container">
+
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link " href="/booksmain">Books</a></li>  
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Papers</a></li>
+          <li class="nav-item active">
+            <a class="nav-link " href="/experience">Interview Experience</a></li>
+          <li class="nav-item active">
+            <a class="nav-link " href="/contact">ContactUs</a></li> 
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Profile</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/me">My Profile</a>
+                <a class="dropdown-item" href="/me/edit-info">Edit Profile</a>
+                <a class="dropdown-item" href="/me/my-ads">My Ads</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/logout">Logout</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+      </div>
+    </nav>
+{% block body %}
+
+{% endblock %}
+</div>
+<div class="space" id="leaveSpace">
+  <p></p>
+</div>
+<footer>
+  <div class="wrapper">
+    <nav>
+      <ul>
+          <li><a href="/www.facebook.com"><i class="fab fa-facebook"></i></a></li>
+          <li><a href="/www.instagram.com"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="/www.twitter.com"><i class="fab fa-twitter"></i></a></li>
+      </ul>
+    </nav>
+    <p class="rights"><i class="far fa-copyright"></i> All Rights Received </p>
+  </div>
+</footer>
+
+</body>
+   
+
+</html>
