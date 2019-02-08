@@ -5,3 +5,4 @@ myvenv
 /static
 .DS_Store
 email_info.py
+settings.py

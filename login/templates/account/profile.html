@@ -5,6 +5,7 @@
 {% endblock %}
 
 {% block body %}
+<br><br><br>
     {% if messages %}
             {% for message in messages %}
                 <div {% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %} role="alert">
