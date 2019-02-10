@@ -3,8 +3,6 @@
 
 
 {% block body %}
-<br><br><br>
-
         {% if messages %}
             {% for message in messages %}
                 <div {% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %} role="alert">
@@ -12,8 +10,9 @@
                     <strong>{{ message }}</strong>
                 </div>
             {% endfor %}
-
         {% endif %}
+
+    <br><br><br>
     <div class="container">
         <h1 align="center">My Ads</h1><br>
         <div style="overflow-x:auto">
