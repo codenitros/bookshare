@@ -290,7 +290,8 @@
                         <div class="post">
                             <p class="blog-meta">By: {{ post.author }}<span>published: {{ post.published_date }}</span></p>
                             <h2 class="title"><a href="{{ post.id }}"><i class="fas fa-long-arrow-alt-right"></i>  {{ post.title }}</a></h2>
-                            <h5><p class="post-text" >{{ post.text|linebreaksbr }}</p></h5>
+                            <h5><p class="post-text" >{{ post.text|linebreaksbr }}</p><p>.....</p></h5>
+                            
                             <p><a href="{{ post.id }}"  class="read-more">read more</a> </p>
                             <span><i class="fas fa-thumbs-up">  7 people liked</i></span>
                             <br>
