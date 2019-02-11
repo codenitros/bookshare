@@ -121,13 +121,12 @@ def show_profile(request):
 	return render(request, 'account/profile.html')
 
 
-@login_required
+
 def delete_act(request):
 	present_user = User.objects.get(username=request.user)
-	present_user.is_active = False
-	present_user.save()
+	present_user.delete()
 	messages.success(request, 'Your Account has been successfully deleted ')
-	return redirect('main/index.html')
+	return redirect('/index')
 
 
 @login_required

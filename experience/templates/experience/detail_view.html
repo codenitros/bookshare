@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+<title>post</title>
+{% endblock %}
+
+
+
+{% block body %}
+
+<br><br><br>
+
+
+<h1>{{post.title }}</h1>
+
+
+<p>By --> {{post.author }}</p>
+
+<p>Published On --> {{ post.published_date }} </p>
+
+<p>{{ post.text }} </p>
+
+<p>Go back to the <a href="/experience">Post List </a></p>
+
+{% endblock%}
+
+

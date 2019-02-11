@@ -11,6 +11,7 @@
 
 
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <link href="https://fonts.googleapis.com/css?family=Lato:300i" rel="stylesheet">
 
       <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
       {% load static %}
@@ -35,6 +36,16 @@
 
 
             }
+
+        #error{
+            font-weight: bold;
+            font-size: 18px;
+            text-align: center;
+            color: red;
+            font-family: 'Lato', sans-serif;
+            position: absolute;
+            margin-top: 140px;
+        }
                           
 
         .container{
@@ -51,6 +62,7 @@
             transform: translate(-50%,-50%);
             background-size: contain;
           }
+
 
         .container-signup{
             background: url(bg.png) no-repeat center;
@@ -190,6 +202,9 @@
     {% endif %}
     <h4>Sign in to Book-Share</h4>
     <div class="container">
+        {% if form.errors %}
+            <p id="error">username or password incorrect</p>
+        {% endif %}
         
         <form method="POST" class="login-form">
             {% csrf_token %}
@@ -207,14 +222,14 @@
             <p><i class="far fa-eye cust3" onclick="myFunction()"></i></p>
 
             <button id = 'login' type="submit">Login</button>
-            <!--<p>forgot password ? <a href="/index/reset-password">click here</a></p>-->
+
             <div class="social-container">
                 <div class="wrapper">
                     <nav>
                       <ul>
-                          <li><a href="/www.facebook.com"><i class="fab fa-facebook"></i></a></li>
-                          <li><a href="/www.instagram.com"><i class="fab fa-instagram"></i></a></li>
-                          <li><a href="/www.twitter.com"><i class="fab fa-twitter"></i></a></li>
+                          <li><a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a></li>
+                          <li><a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a></li>
+                          <li><a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a></li>
                       </ul>
                     </nav>
                 </div>
