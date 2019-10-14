@@ -3,7 +3,7 @@
 
 ## ABOUT
 
-Bookshare is a platform for UVCE college students to share their used books with their peers.Students after sighing up can post ads for books that they wish to sell.Interested students can view the ads.An Interview blog helps students in preparing for interviews. All the content in the website is for representational purpose and nothing of this sort is registered by college or the university.
+Bookshare is a platform for UVCE college students to share their used books with their peers.Students after signing up can post ads for books that they wish to sell.Interested students can view the ads.An Interview blog helps students in preparing for interviews. All the content in the website is for representational purpose and nothing of this sort is registered by college or the university.
 
 ## FEATURES
 
@@ -26,5 +26,5 @@ Bookshare is a platform for UVCE college students to share their used books with
 
 ## Contributing
 
-Bug reports & Feature Requests. New Features are welcomed.
+Bug reports & Feature Requests are welcomed.
 
